@@ -1,9 +1,5 @@
-Hacker Rank Contest Link - https://www.hackerrank.com/41dec30av2022
---------------------------
-
-
-My solutions for Logic Based Programming Practise Problems -  350 Programs in C, Java and Python
------------------------------------------------------------
+My solutions for Logic Based Programming Practise Problems on Hacker Rank -  350 Programs in C, Java and Python
+--------------------------------------------------------------------------------------------------------------
 
 My Daily Activity In LBP:
 ------------------------
@@ -23624,4 +23620,5 @@ else:
 
 
 
+ Contest Link - https://www.hackerrank.com/41dec30av2022
 
