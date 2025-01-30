@@ -1,0 +1,4992 @@
+Problem Link : https://www.hackerrank.com/matrixtest
+
+
+1 2 3
+4 5 6
+7 8 9
+
+order of matrix: 3x3
+3 rows
+3 cols
+
+1 2 3 4
+5 6 7 8
+
+order of matrix: 2x4
+
+10
+
+order of matrix: 1x1
+
+int a[10];
+int a[10][10];
+
+int a[][] = new int[5][5];
+
+List only ===> nested list
+
+[[1,2,3],[4,5,6],[7,8,9]]
+
+
+1 2 3
+4 5 6
+7 8 9
+
+1 2 3
+4
+7 8
+
+array of arrays
+nested list 
+
+int a[] = new int[rows];
+int a[] = new int[3];
+a[0] = new int[3];
+a[1] = new int[1];
+a[2] = new int[2];
+
+L=[[x,x,x],[x],[x,x]]
+
+Hear of this entire matrix is rows x columns
+
+very very imp elements are 1) rows ---> n  ---> 3
+                           2) cols ---> m  ---> 3
+
+
+
+
+int a[5];
+
+for(i=0;i<5;i++)
+{
+	a[i]
+}
+
+
+int a[5][5];
+
+for(i=0;i<5;i++)
+{
+	for(j=0;j<5;j++)
+	{
+		a[i][j]
+	}
+}
+
+Ex:
+int a[3][2];
+
+for(i=0;i<3;i++) //3 times
+{
+	for(j=0;j<2;j++) //2 times
+	{
+		a[i][j]
+	}
+}
+
+i=0 ====> j=0,j=1
+i=1 ====> j=0,j=1
+i=2 ====> j=0,j=1
+
+(0,0) (0,1)
+(1,0) (1,1)
+(2,0) (2,1)
+
+LBP201
+
+read and write matrix elements
+
+Write a program to read matrix and display on the console.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> a 3x3 matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[5][5],i,j,n,m;
+    scanf("%d",&n);
+    scanf("%d",&m);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int n=obj.nextInt();
+        int m=obj.nextInt();
+        int a[][] = new int[n][m];
+        int i,j;
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+
+n=int(input())
+m=int(input())
+a=[]
+for i in range(n):
+    a.append([int(i) for i in input().split()])
+for i in range(n):
+    for j in range(m):
+        print(a[i][j],end=' ')
+    print()
+              
+[[1,2,3],
+[4,5,6],
+[7,8,9]]
+
+1 2 3 ==> '1 2 3' ==> '1', '2', '3' ===> [1,2,3]
+4 5 6
+7 8 9
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+for i in range(n):
+    a.append([int(i) for i in input().split()])
+
+for i in range(n):
+    b=[]
+    for j in range(m):
+         b.append(int(input()))
+    a.append(b)
+
+
+"1 2 3".split() ===> 1,2,3
+"hi hello how are you".split() ===> hi,hello,how,are,you
+
+
+
+LBP202
+
+sum of all matrix elements
+
+Write a program to find sum of all elements in the matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of all elements
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[5][5],i,j,n,m,s;
+    scanf("%d",&n);
+    scanf("%d",&m);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int n=obj.nextInt();
+        int m=obj.nextInt();
+        int a[][] = new int[n][m];
+        int i,j,s;
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=0;
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+n=int(input())
+m=int(input())
+a=[]
+for i in range(n):
+    a.append([int(i) for i in input().split()])
+s=0    
+for i in range(n):
+    for j in range(m):
+        s=s+a[i][j]
+print(s)
+
+LBP203
+
+sum of all even elements
+
+Write a program to find sum of all even elements in the matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of all even elements
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+	    if(a[i][j]%2==0)
+                  s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+	        if(a[i][j]%2==0)
+			s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=0    
+for i in range(3):
+    for j in range(3):
+        if a[i][j]%2==0:
+            s=s+a[i][j]
+print(s)
+
+
+LBP204
+
+sum of all odd elements
+
+Write a program to find sum of all odd elements in the matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of all odd elements
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+	    if(a[i][j]%2!=0)
+                  s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+	        if(a[i][j]%2!=0)
+			s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=0    
+for i in range(3):
+    for j in range(3):
+        if a[i][j]%2!=0:
+            s=s+a[i][j]
+print(s)
+
+
+LBP205
+
+sum of all prime elements
+
+Write a program to find sum of all prime elements in the matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of all prime elements
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int isprime(int n)
+{
+    int i,f=0;
+    for(i=1;i<=n;i++)
+    {
+        if(n%i==0)
+            f++;
+    }
+    return f==2;
+}
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+	    if(isprime(a[i][j]))
+                  s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+	 static boolean isprime(int n)
+	    {
+		int i,f=0;
+		for(i=1;i<=n;i++)
+		{
+		    if(n%i==0)
+			f++;
+		}
+		return f==2;
+	    }
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+	        if(isprime(a[i][j]))
+			s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+def isprime(n):
+    f=0
+    for i in range(1,n+1):
+        if n%i==0:
+            f=f+1
+    return f==2
+
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=0    
+for i in range(3):
+    for j in range(3):
+        if isprime(a[i][j]):
+            s=s+a[i][j]
+print(s)
+
+LBP206
+
+row wise sum in matrix
+
+Write a program to find row wise sum in the matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of each row
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+	s=0;
+        for(j=0;j<3;j++)
+        {
+	    s=s+a[i][j];
+        }
+	printf("%d\n",s);
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+	    s=0;
+            for(j=0;j<3;j++)
+            {
+		s=s+a[i][j];
+            }
+	    System.out.println(s);
+        }        
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+  
+for i in range(3):
+    s=0  
+    for j in range(3):
+            s=s+a[i][j]
+	print(s)
+
+
+LBP207
+
+column wise sum in matrix
+
+Write a program to find column wise sum in the matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of each column
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+	s=0;
+        for(j=0;j<3;j++)
+        {
+	    s=s+a[j][i];
+        }
+	printf("%d\n",s);
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+	    s=0;
+            for(j=0;j<3;j++)
+            {
+		s=s+a[j][i];
+            }
+	    System.out.println(s);
+        }        
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+  
+for i in range(3):
+    s=0  
+    for j in range(3):
+            s=s+a[j][i]
+	print(s)
+
+
+LBP208
+
+sum of diagonal elements in matrix
+
+Write a program to find sum of diagonal elements in matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of diagonal elements
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+	    if(i==j)
+                  s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+	        if(i==j)
+			s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=0    
+for i in range(3):
+    for j in range(3):
+        if i==j:
+            s=s+a[i][j]
+print(s)
+
+
+LBP209
+
+sum of opposite diagonal elements in matrix
+
+Write a program to find sum of opposite diagonal elements in matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of opposite diagonal elements
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+         s=s+a[i][3-i-1];
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=0;
+        for(i=0;i<3;i++)
+        {
+		s=s+a[i][3-i-1];
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=0    
+for i in range(3):
+         s=s+a[i][3-i-1]
+print(s)
+
+LBP210
+
+sum of first and last element in the matrix
+
+Write a program to find sum of first and last element in a matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> sum of first and last element in matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("%d",a[0][0]+a[2][2]);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        System.out.println(a[0][0]+a[2][2]);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=0    
+print(a[0][0]+a[2][2])
+
+
+LBP211
+
+find the product of diagonal matrix
+
+Write a program to find the product of diagonal matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> find the product of diagonal matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=1;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+	    if(i==j)
+                  s=s*a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=1;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+	        if(i==j)
+			s=s*a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=1    
+for i in range(3):
+    for j in range(3):
+        if i==j:
+            s=s*a[i][j]
+print(s)
+
+
+LBP212
+
+find the product of opposite diagonal matrix
+
+Write a program to find the product of opposite diagonal matrix.
+
+input --------> a 3x3 matrix
+constriants --> no
+output -------> find the product of opposite diagonal matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=1;
+    for(i=0;i<3;i++)
+    {
+         s=s*a[i][3-i-1];
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=1;
+        for(i=0;i<3;i++)
+        {
+		s=s*a[i][3-i-1];
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=1    
+for i in range(3):
+         s=s*a[i][3-i-1]
+print(s)
+
+
+
+LBP213
+
+max element in matrix
+
+Implement a program to print max element in an matrix
+
+input -----> a 3x3 matrix
+constraint-> no
+output ----> max element in matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,max;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    max=a[0][0];
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(max<a[i][j])
+                max=a[i][j];
+        }
+    }
+    printf("%d",max);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j,max;
+        int a[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        max=a[0][0];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(max<a[i][j])
+                    max=a[i][j];
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+max=a[0][0]
+for i in range(3):
+    for j in range(3):
+        if max<a[i][j]:
+            max=a[i][j]
+print(max)
+
+
+LBP214
+
+min element in matrix
+
+Implement a program to print min element in an matrix
+
+input -----> a 3x3 matrix
+constraint-> no
+output ----> min element in matrix
+
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,min;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    min=a[0][0];
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(min>a[i][j])
+                min=a[i][j];
+        }
+    }
+    printf("%d",min);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j,min;
+        int a[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        min=a[0][0];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(min>a[i][j])
+                    min=a[i][j];
+            }
+        }
+        System.out.println(min);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+min=a[0][0]
+for i in range(3):
+    for j in range(3):
+        if min>a[i][j]:
+            min=a[i][j]
+print(min)
+
+
+LBP215
+
+max element in each row of a matrix
+
+Implement a program to print max element in each row of a matrix
+
+
+input -----> a 3x3 matrix
+constraint-> no
+output ----> print max element in each row of a matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,max;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        max=a[i][0];
+        for(j=0;j<3;j++)
+        {
+            if(max<a[i][j])
+                max=a[i][j];
+        }
+        printf("%d\n",max);
+    }   
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j,max;
+        int a[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            max=a[i][0];
+            for(j=0;j<3;j++)
+            {
+                if(max<a[i][j])
+                    max=a[i][j];
+            }
+            System.out.println(max);
+        }        
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+for i in range(3):
+    max=a[i][0]
+    for j in range(3):
+        if max<a[i][j]:
+            max=a[i][j]
+    print(max)
+
+
+LBP216
+
+min element in each row of a matrix
+
+Implement a program to print min element in each row of a matrix
+
+
+input -----> a 3x3 matrix
+constraint-> no
+output ----> print min element in each row of a matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,min;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        min=a[i][0];
+        for(j=0;j<3;j++)
+        {
+            if(min>a[i][j])
+                min=a[i][j];
+        }
+        printf("%d\n",min);
+    }   
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j,min;
+        int a[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            min=a[i][0];
+            for(j=0;j<3;j++)
+            {
+                if(min>a[i][j])
+                    min=a[i][j];
+            }
+            System.out.println(min);
+        }        
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+for i in range(3):
+    min=a[i][0]
+    for j in range(3):
+        if min>a[i][j]:
+            min=a[i][j]
+    print(min)
+
+
+LBP217
+
+transpose of the given matrix
+
+Implement a program to print transpose of a matrix
+
+
+input -----> a 3x3 matrix
+constraint-> no
+output ----> print transpose of the matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[j][i]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j;
+        int a[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(a[j][i]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+---------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+for i in range(3):
+    for j in range(3):
+        print(a[j][i],end=' ')
+    print()
+
+LBP218
+
+trace of the given matrix
+
+Implement a program to find trace(sum of diagonal elements) of the given matrix.
+
+
+input -----> a 3x3 matrix
+constraint-> no
+output ----> print trace of the matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+	    if(i==j)
+                  s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][] = new int[3][3];
+        int i,j,s;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+	        if(i==j)
+			s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+s=0    
+for i in range(3):
+    for j in range(3):
+        if i==j:
+            s=s+a[i][j]
+print(s)
+
+
+LBP219
+
+find the frequency of odd and even 
+
+Write a program to find frequency of odd and even elements in the matrix excluding 0.
+
+input ------> a 3x3 matrix
+constraint -> no
+output -----> odd elements and even elements count
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,c1,c2;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    c1=0;//odd
+    c2=0;//even
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(a[i][j]%2==0 && a[i][j]!=0)
+                c2++;
+            if(a[i][j]%2!=0)
+                c1++;
+        }
+    }
+    printf("%d\n%d",c1,c2);
+    return 0;
+}
+
+
+java implementation:
+---------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j,c1,c2;
+        int a[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        c1=0;//odd
+        c2=0;//even
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(a[i][j]%2==0 && a[i][j]!=0)
+                    c2++;
+                if(a[i][j]%2!=0)
+                    c1++;
+            }
+        }
+        System.out.println(c1);
+        System.out.println(c2);
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+c1=0#odd
+c2=0#even
+for i in range(3):
+    for j in range(3):
+        if a[i][j]%2==0 and a[i][j]!=0:
+            c2=c2+1
+        if a[i][j]%2!=0:
+            c1=c1+1
+print(c1)
+print(c2)
+
+LBP220
+
+identity matrix
+
+Implement a program to check whether the given matrix is identity matrix or not
+
+input -------> a 3x3 matrix
+constraint --> no
+output ------> Yes or No
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,flag=1;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(i==j && a[i][j]!=1)
+            {
+                flag=0;
+                break;
+            }
+            if(i!=j && a[i][j]!=0)
+            {
+                flag=0;
+                break;
+            }
+        }
+    }
+    printf((flag==1)?"Yes":"No");
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j;
+        boolean flag=true;
+        int a[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(i==j && a[i][j]!=1)
+                {
+                    flag=false;
+                    break;
+                }
+                if(i!=j && a[i][j]!=0)
+                {
+                    flag=false;
+                    break;
+                }
+            }
+        }
+        System.out.println((flag)?"Yes":"No");
+    }
+}
+
+python implementation:
+----------------------
+flag=True
+a=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+for i in range(3):
+    for j in range(3):
+        if i==j and a[i][j]!=1:
+            flag=False
+            break
+        if i!=j and a[i][j]!=0:
+            flag=False
+            break
+print("Yes" if flag else "No")
+
+LBP221
+
+two matrices are equal or not
+
+Implement a program to check whether the given matrices are equal or not
+
+input -------> a 3x3 matrix
+constraint --> no
+output ------> Yes or No
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],b[3][3],i,j,flag=1;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(a[i][j]!=b[i][j])
+            {
+                flag=0;
+                break;
+            }           
+        }
+    }
+    printf((flag==1)?"Yes":"No");
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j;
+        boolean flag=true;
+        int a[][]=new int[3][3];
+        int b[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                b[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(a[i][j]!=b[i][j])
+                {
+                    flag=false;
+                    break;
+                }
+            }
+        }
+        System.out.println((flag)?"Yes":"No");
+    }
+}
+
+python implementation:
+----------------------
+flag=True
+a=[]
+b=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+for i in range(3):
+    b.append([int(i) for i in input().split()])    
+for i in range(3):
+    for j in range(3):
+        if a[i][j]!=b[i][j]:
+            flag=False
+            break
+print("Yes" if flag else "No")
+
+
+LBP222
+
+addition of two matrices
+
+Write a program to perform addition operation on two matrices
+
+input --------> two 3x3 matrices
+constraint----> no
+output -------> resultent matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],b[3][3],c[3][3],i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            c[i][j]=a[i][j]+b[i][j];        
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",c[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j;
+        boolean flag=true;
+        int a[][]=new int[3][3];
+        int b[][]=new int[3][3];
+        int c[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                b[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                c[i][j]=a[i][j]+b[i][j];
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(c[i][j]+" ");
+            }
+            System.out.println();
+        }        
+    }
+}
+
+
+python implementation:
+----------------------
+a=[]
+b=[]
+c=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+for i in range(3):
+    b.append([int(i) for i in input().split()])    
+for i in range(3):
+    cc=[]
+    for j in range(3):
+        cc.append(a[i][j]+b[i][j])
+    c.append(cc)
+for i in range(3):
+    for j in range(3):
+        print(c[i][j],end=' ')
+    print()
+
+
+LBP223
+
+subtraction of two matrices
+
+Write a program to perform subtraction operation on two matrices
+
+input --------> two 3x3 matrices
+constraint----> no
+output -------> resultent matrix
+
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],b[3][3],c[3][3],i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            c[i][j]=a[i][j]-b[i][j];        
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",c[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j;
+        boolean flag=true;
+        int a[][]=new int[3][3];
+        int b[][]=new int[3][3];
+        int c[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                b[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                c[i][j]=a[i][j]-b[i][j];
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(c[i][j]+" ");
+            }
+            System.out.println();
+        }        
+    }
+}
+
+
+python implementation:
+----------------------
+a=[]
+b=[]
+c=[]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+for i in range(3):
+    b.append([int(i) for i in input().split()])    
+for i in range(3):
+    cc=[]
+    for j in range(3):
+        cc.append(a[i][j]-b[i][j])
+    c.append(cc)
+for i in range(3):
+    for j in range(3):
+        print(c[i][j],end=' ')
+    print()
+
+
+
+LBP224 
+
+multiplication of two matrices
+
+Write a program to perform multiplication operation on two matrices
+
+input --------> two 3x3 matrices
+constraint----> no
+output -------> resultent matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],b[3][3],i,j,c[3][3],k;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            c[i][j]=0;
+            for(k=0;k<3;k++)
+            {
+                c[i][j]=c[i][j]+(a[i][k]*b[k][j]);
+            }
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",c[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j,k;
+        int a[][]=new int[3][3];
+        int b[][]=new int[3][3];
+        int c[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                b[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                c[i][j]=0;
+                for(k=0;k<3;k++)
+                {
+                    c[i][j]=c[i][j]+(a[i][k]*b[k][j]);
+                }
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(c[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+a=[]
+b=[]
+c=[[0,0,0],[0,0,0],[0,0,0]]
+for i in range(3):
+    a.append([int(i) for i in input().split()])
+for i in range(3):
+    b.append([int(i) for i in input().split()])    
+
+
+for i in range(3):
+    for j in range(3):
+        for k in range(3):
+            c[i][j]=c[i][j]+(a[i][k]*b[k][j])
+    
+for i in range(3):
+    for j in range(3):
+        print(c[i][j],end=' ')
+    print()
+
+
+LBP225
+
+sort all the elements in a matrix in asc order
+
+Implement a program to sort all the elements in asc order in the matrix
+
+input -------> a matrix
+cons---------> no
+output ------> result matrix
+
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,t,k,b[100];
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    k=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            b[k++]=a[i][j];
+        }
+    }
+    for(i=0;i<k;i++)
+    {
+        for(j=i+1;j<k;j++)
+        {
+            if(b[i]>b[j])
+            {
+                t=b[i];
+                b[i]=b[j];
+                b[j]=t;
+            }
+        }
+    }
+    k=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            a[i][j]=b[k++];
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,k;
+        int b[]=new int[9];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        k=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                b[k++]=a[i][j];
+            }
+        }
+        Arrays.sort(b);
+        k=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=b[k++];
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+ll=[]
+for i in range(3):
+    for j in range(3):
+        ll.append(l[i][j])
+ll.sort()
+k=0
+for i in range(3):
+    for j in range(3):
+        l[i][j]=ll[k]
+        k=k+1
+for i in range(3):
+    for j in range(3):
+        print(l[i][j],end=' ')
+    print()
+
+LBP226
+
+sort all the elements in a matrix in desc order
+
+Implement a program to sort all the elements in desc in the matrix
+
+input -------> a matrix
+cons---------> no
+output ------> result matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,t,k,b[100];
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    k=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            b[k++]=a[i][j];
+        }
+    }
+    for(i=0;i<k;i++)
+    {
+        for(j=i+1;j<k;j++)
+        {
+            if(b[i]<b[j])
+            {
+                t=b[i];
+                b[i]=b[j];
+                b[j]=t;
+            }
+        }
+    }
+    k=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            a[i][j]=b[k++];
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,k;
+        int b[]=new int[9];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        k=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                b[k++]=a[i][j];
+            }
+        }
+        Arrays.sort(b);
+        k=9-1;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=b[k--];
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+ll=[]
+for i in range(3):
+    for j in range(3):
+        ll.append(l[i][j])
+ll.sort(reverse=True)
+k=0
+for i in range(3):
+    for j in range(3):
+        l[i][j]=ll[k]
+        k=k+1
+for i in range(3):
+    for j in range(3):
+        print(l[i][j],end=' ')
+    print()
+
+
+LBP227
+
+sort all the elements in a row in asc order
+
+Implement a program to sort all the rowwise elements in asc order
+
+input -------> a matrix
+cons---------> no
+output ------> result matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,k,t;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    //logic begin 
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            //a[i][j] where i is fixed
+            //a[0][0],a[0][1],a[0][2]
+            for(k=j+1;k<3;k++)
+            {
+                if(a[i][j]>a[i][k])
+                {
+                    t=a[i][j];
+                    a[i][j]=a[i][k];
+                    a[i][k]=t;
+                }
+            }
+        }
+    }
+    //logic ends
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            Arrays.sort(a[i]);
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+for i in range(3):
+    l[i].sort()
+for i in range(3):
+    for j in range(3):
+        print(l[i][j],end=' ')
+    print()
+
+LBP228
+
+sort all the elements in a row in desc order
+
+Implement a program to sort all the row wise elements in desc order
+
+input -------> a matrix
+cons---------> no
+output ------> result matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,k,t;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    //logic begin 
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            //a[i][j] where i is fixed
+            //a[0][0],a[0][1],a[0][2]
+            for(k=j+1;k<3;k++)
+            {
+                if(a[i][j]<a[i][k])
+                {
+                    t=a[i][j];
+                    a[i][j]=a[i][k];
+                    a[i][k]=t;
+                }
+            }
+        }
+    }
+    //logic ends
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            Arrays.sort(a[i]);
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=3-1;j>=0;j--)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+for i in range(3):
+    l[i].sort(reverse=True)
+for i in range(3):
+    for j in range(3):
+        print(l[i][j],end=' ')
+    print()
+
+LBP229
+
+sort all the elements in a column in asc order
+
+Implement a program to sort all the column values in asc order
+
+input -------> a matrix
+cons---------> no
+output ------> result matrix
+
+logic:
+
+1. read a matrix from the user
+2. copy the content of a matrix to b matrix like b[i][j]=a[j][i]
+3. apply row wise sorting method
+4. print b[j][i] matrix
+
+
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],b[3][3],i,j,k,t;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            b[i][j]=a[j][i];
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            for(k=j+1;k<3;k++)
+            {
+                if(b[i][j]>b[i][k])
+                {
+                    t=b[i][j];
+                    b[i][j]=b[i][k];
+                    b[i][k]=t;
+                }
+            }
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",b[j][i]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int b[][]=new int[3][3];
+        int i,j,k;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                b[i][j]=a[j][i];
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            Arrays.sort(b[i]);
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(b[j][i]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+ll=[[0,0,0],[0,0,0],[0,0,0]]
+for i in range(3):
+    for j in range(3):
+        ll[i][j]=l[j][i]
+for i in range(3):
+    ll[i].sort()
+
+for i in range(3):
+    for j in range(3):
+        print(ll[j][i],end=' ')
+    print()
+
+LBP230
+
+sort all the elements in a column in desc order
+
+Implement a program to sort the all the column values in desc order
+
+input -------> a matrix
+cons---------> no
+output ------> result matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],b[3][3],i,j,k,t;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            b[i][j]=a[j][i];
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            for(k=j+1;k<3;k++)
+            {
+                if(b[i][j]<b[i][k])
+                {
+                    t=b[i][j];
+                    b[i][j]=b[i][k];
+                    b[i][k]=t;
+                }
+            }
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",b[j][i]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int b[][]=new int[3][3];
+        int i,j,k;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                b[i][j]=a[j][i];
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            Arrays.sort(b[i]);
+        }
+        for(i=3-1;i>=0;i--)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(b[j][i]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+ll=[[0,0,0],[0,0,0],[0,0,0]]
+for i in range(3):
+    for j in range(3):
+        ll[i][j]=l[j][i]
+for i in range(3):
+    ll[i].sort(reverse=True)
+
+for i in range(3):
+    for j in range(3):
+        print(ll[j][i],end=' ')
+    print()
+
+LBP231
+
+sparse matrix
+
+Implement a program to check whether the given matrix is sparse matrix or not.
+
+Note: a sparse matrix is a matrix with the majority of its elements equal to zero.
+
+input---------> a matrix
+con ----------> no
+output -------> Yes or No
+
+
+c implementation:
+----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],counter,i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    counter=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(a[i][j]==0)
+                counter++;
+        }
+    }
+    printf((counter>=5)?"Yes":"No");
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int i,j,counter=0;
+        int a[][]=new int[3][3];
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(a[i][j]==0)
+                    counter++;
+            }
+        }
+        System.out.println((counter>=5)?"Yes":"No");
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+counter=0
+for i in l:
+    counter=counter+i.count(0)
+print("Yes" if counter>=5 else "No")
+
+
+LBP232
+
+swaping of two rows
+
+Implement a program to swap two given rows.
+
+input -------> matrix and m and n values
+con ---------> no
+output ------> modified matrix
+
+0 ==> 11 22 33
+1 ==> 44 55 66
+2 ==> 77 88 99
+
+m=1 and n=2
+m-1 and n-1
+1-1 and 2-1
+0 and 1
+
+0 ==> 44 55 66
+1 ==> 11 22 33
+2 ==> 77 88 99
+
+for i=0,i<3,i++
+
+t=a[m-1][i]
+a[m-1][i]=a[n-1][i]
+a[n-1][i]=t
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,m,n,t;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    scanf("%d %d",&m,&n);
+    for(i=0;i<3;i++)
+    {
+        t=a[m-1][i];
+        a[m-1][i]=a[n-1][i];
+        a[n-1][i]=t;
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,t,m,n;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        m=obj.nextInt();
+        n=obj.nextInt();
+        for(i=0;i<3;i++)
+        {
+            t=a[m-1][i];
+            a[m-1][i]=a[n-1][i];
+            a[n-1][i]=t;
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+m=int(input())
+n=int(input())
+l=[l1,l2,l3]
+#swaping
+l[m-1],l[n-1]=l[n-1],l[m-1]
+for i in range(3):
+    for j in range(3):
+        print(l[i][j],end=' ')
+    print()
+
+LBP233
+
+swaping of two columns
+
+Implement a program to swap two given columns
+
+input -------> matrix and m and n values
+con ---------> no
+output ------> modified matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,m,n,t;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    scanf("%d %d",&m,&n);
+    for(i=0;i<3;i++)
+    {
+        t=a[i][m-1];
+        a[i][m-1]=a[i][n-1];
+        a[i][n-1]=t;
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,t,m,n;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        m=obj.nextInt();
+        n=obj.nextInt();
+        for(i=0;i<3;i++)
+        {
+            t=a[i][m-1];
+            a[i][m-1]=a[i][n-1];
+            a[i][n-1]=t;
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+m=int(input())
+n=int(input())
+l=[l1,l2,l3]
+#swaping
+for i in range(3):
+    l[i][m-1],l[i][n-1]=l[i][n-1],l[i][m-1]
+for i in range(3):
+    for j in range(3):
+        print(l[i][j],end=' ')
+    print()
+
+
+LBP234
+
+interchange the diagonals
+
+Program to accept a matrix of order 3x3 & interchange the diagonals.
+
+input -------> a 3x3 matrix 
+con ---------> no
+output ------> modified matrix
+
+i=0 ==> 1 2 3
+i=1 ==> 4 5 6
+i=2 ==> 7 8 9
+
+a[i][i]
+a[i][3-i-1]
+
+diagonal elements ====> a[0][0],a[1][1],a[2][2] ===> 1, 5, 9
+diagonal elements ====> a[0][2],a[1][1],a[2][0] ===> 3, 5, 7
+
+swap a[i][i] and a[i][3-i-1]
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,t;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        t=a[i][i];
+        a[i][i]=a[i][3-i-1];
+        a[i][3-i-1]=t;
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,t;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            t=a[i][i];
+            a[i][i]=a[i][3-i-1];
+            a[i][3-i-1]=t;
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+for i in range(3):
+    l[i][i],l[i][3-i-1]=l[i][3-i-1],l[i][i]
+for i in range(3):
+    for j in range(3):
+        print(l[i][j],end=' ')
+    print()
+
+
+
+LBP235
+
+upper triangular matrix
+
+Program to accept a matrix and check whether it is upper triangular matrix or not
+
+input -------> a 3x3 matrix 
+con ---------> no
+output ------> Yes or No
+
+1 2 3
+4 5 6
+7 8 9
+
+No
+
+1 2 3
+0 5 6
+0 0 9
+
+Yes
+
+logic:
+
+(0,0) (0,1) (0,2)
+(1,0) (1,1) (1,2)
+(2,0) (2,1) (2,2)
+
+flag=1;
+
+(1,0),(2,0),(2,1) ===> j<i && a[i][j]!=0
+
+then set flag=0;
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,flag=1;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(j<i && a[i][j]!=0)
+            {
+                flag=0;
+            }
+        }
+    }
+    printf((flag==1)?"Yes":"No");
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j;
+        boolean flag=true;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(a[i][j]!=0 && j<i)
+                    flag=false;
+            }
+        }
+        System.out.println(flag?"Yes":"No");
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+flag=True
+for i in range(3):
+    for j in range(3):
+        if j<i and l[i][j]!=0:
+            flag=False
+print("Yes" if flag else "No")
+
+
+LBP236
+
+lower triangular matrix
+
+Program to accept a matrix and check whether it is lower triangular matrix or not
+
+input -------> a 3x3 matrix 
+con ---------> no
+output ------> Yes or No
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,flag=1;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(j>i && a[i][j]!=0)
+            {
+                flag=0;
+            }
+        }
+    }
+    printf((flag==1)?"Yes":"No");
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j;
+        boolean flag=true;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(a[i][j]!=0 && j>i)
+                    flag=false;
+            }
+        }
+        System.out.println(flag?"Yes":"No");
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+flag=True
+for i in range(3):
+    for j in range(3):
+        if j>i and l[i][j]!=0:
+            flag=False
+print("Yes" if flag else "No")
+
+
+
+LBP237
+
+Scalar matrix multiplication
+
+Implement a program to read a matrix and multiplier and return scalar matrix multiplication.
+
+input -------> a 3x3 matrix and multiplier
+con ---------> no
+output ------> resultent matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,n;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    scanf("%d",&n);
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]*n);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+-------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,n;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        n=obj.nextInt();
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print((a[i][j]*n)+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+n=int(input())
+for i in range(3):
+    for j in range(3):
+        print(l[i][j]*n,end=' ')
+    print()
+
+
+
+LBP238
+
+Symmetric matrix
+
+Implement a program to read a matrix and check whether the given matrix is symmertric matrix or not
+
+input -------> a 3x3 matrix 
+con ---------> no
+output ------> Yes or No
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,c;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    c=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(a[i][j]==a[j][i])
+                c++;
+        }
+    }
+    printf((c==9)?"Yes":"No");
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,c=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(a[i][j]==a[j][i])
+                    c++;
+            }
+        }
+        System.out.println((c==9)?"Yes":"No");
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+c=0
+for i in range(3):
+    for j in range(3):
+        if l[i][j]==l[j][i]:
+            c=c+1
+print("Yes" if c==9 else "No")
+
+LBP239
+
+print diagonal elements
+
+Implement a program to read a matrix and display only diagonal elements.
+
+input -------> a 3x3 matrix 
+con ---------> no
+output ------> print only diagonal elements
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(i==j)
+            {
+                printf("%d ",a[i][j]);
+            }
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(i==j)
+                    System.out.print(a[i][j]+" ");
+                else
+                    System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+for i in range(3):
+    for j in range(3):
+        if i==j:
+            print(l[i][j],end=' ')
+        else:
+            print('  ',end='')
+    print()
+
+LBP240
+
+Square of Each Element of Matrix
+
+Implement a program to find square of each element present in a matrix.
+
+input -------> a 3x3 matrix 
+con ---------> no
+output ------> resultent matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",a[i][j]*a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                System.out.print((a[i][j]*a[i][j])+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+for i in range(3):
+    for j in range(3):
+        print(l[i][j]*l[i][j],end=' ')
+    print()
+
+LBP241	
+
+Sum of even indexed rows in matrix
+
+Implement a program to find sum of even indexed rows in the given matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> sum as an int
+
+0 ---> 1 2 3
+1----> 4 5 6
+2 ---> 7 8 9
+
+1+2+3+7+8+9=30
+
+logic
+
+for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	{
+		if(i%2==0)
+			s=s+a[i][j];
+	}
+}
+
+print s
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(i%2==0)
+                s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(i%2==0)
+                    s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+s=0
+for i in range(3):
+    for j in range(3):
+        if i%2==0:
+            s=s+l[i][j]
+print(s)
+
+LBP242	
+
+Sum of odd indexed rows in matrix
+
+Implement a program to find sum of odd indexed rows in the given matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> sum as an int
+
+
+0 ---> 1 2 3
+1----> 4 5 6
+2 ---> 7 8 9
+
+4+5+6 = 15
+
+logic
+
+for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	{
+		if(i%2!=0)
+			s=s+a[i][j];
+	}
+}
+
+print s
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(i%2!=0)
+                s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(i%2!=0)
+                    s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+s=0
+for i in range(3):
+    for j in range(3):
+        if i%2!=0:
+            s=s+l[i][j]
+print(s)
+
+
+
+LBP243	
+
+Sum of even indexed cols in matrix
+
+Implement a program to find sum of even indexed cols in the given matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> sum as an int
+
+       0 1 2
+
+0 ---> 1 2 3
+1----> 4 5 6
+2 ---> 7 8 9
+
+1+4+7+3+6+9 =30
+
+logic
+
+for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	{
+		if(j%2==0)
+			s=s+a[i][j];
+	}
+}
+
+print s
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(j%2==0)
+                s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(j%2==0)
+                    s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+s=0
+for i in range(3):
+    for j in range(3):
+        if j%2==0:
+            s=s+l[i][j]
+print(s)
+
+
+
+LBP244	
+
+Sum of odd indexed cols in matrix
+
+Implement a program to find sum of odd indexed cols in the given matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> sum as an int
+
+
+       0 1 2
+
+0 ---> 1 2 3
+1----> 4 5 6
+2 ---> 7 8 9
+
+2+5+8 =15
+
+logic
+
+for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	{
+		if(j%2!=0)
+			s=s+a[i][j];
+	}
+}
+
+print s
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(j%2!=0)
+                s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(j%2!=0)
+                    s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+s=0
+for i in range(3):
+    for j in range(3):
+        if j%2!=0:
+            s=s+l[i][j]
+print(s)
+
+
+
+LBP245	
+
+Sum of elements whose sum of row index and col index is even
+
+Implement a program to find sum of row index and col index is even in the given matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> sum as an int
+
+formula:  (i+j)%2==0
+
+logic
+
+for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	{
+		if((i+j)%2=0)
+			s=s+a[i][j];
+	}
+}
+
+print s
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if((i+j)%2=0)
+                s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if((i+j)%2=0)
+                    s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+s=0
+for i in range(3):
+    for j in range(3):
+        if (i+j)%2=0:
+            s=s+l[i][j]
+print(s)
+
+
+
+LBP246	
+
+Sum of elements whose sum of row index and col index is odd
+
+Implement a program to find sum of row index and col index is odd in the given matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> sum as an int
+
+
+formula:  (i+j)%2==0
+
+logic
+
+for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	{
+		if((i+j)%2=0)
+			s=s+a[i][j];
+	}
+}
+
+print s
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a[3][3],i,j,s;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if((i+j)%2=0)
+                s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if((i+j)%2=0)
+                    s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+s=0
+for i in range(3):
+    for j in range(3):
+        if (i+j)%2=0:
+            s=s+l[i][j]
+print(s)
+
+LBP247	
+
+Sum of prime elements 
+
+Implement a program to find sum of prime elements in the given matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> sum as an int
+
+LOGIC
+
+s=0;
+for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	{
+		if(isprime(a[i][j])
+			s=s+a[i][j];
+	}
+}
+print s
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int isprime(int n)
+{
+    int f=0,i;
+    for(i=1;i<=n;i++)
+    {
+        if(n%i==0)
+            f++;
+    }
+    return f==2;
+}
+int main() {
+    int a[3][3],i,j,s=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(isprime(a[i][j]))
+                s=s+a[i][j];
+        }
+    }
+    printf("%d",s);
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static boolean isprime(int n)
+    {
+        int i,f=0;
+        for(i=1;i<=n;i++)
+        {
+            if(n%i==0)
+                f++;
+        }
+        return f==2;
+    }
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,s=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                if(isprime(a[i][j]))
+                    s=s+a[i][j];
+            }
+        }
+        System.out.println(s);
+    }
+}
+
+python implementation:
+----------------------
+def isprime(n):
+    f=0
+    for i in range(1,n+1):
+        if n%i==0:
+            f=f+1
+    return f==2
+
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+s=0
+for i in range(3):
+    for j in range(3):
+        if isprime(l[i][j]):
+            s=s+l[i][j]
+print(s)
+
+
+
+LBP248	
+
+Count of prime digits in the given matrix
+
+Implement a program to count number of prime digits present in the matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> prime digits count
+
+
+logic:
+
+count=0;
+
+for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	{
+		count=count+countprime(a[i][j]);2
+					123
+	}
+}
+
+int countprime(int n)
+{
+	while(n!=0)
+	{
+		d=n%10;
+		if(d==2 or 3 or 5 or 7)
+		  c=c+1;
+		n=n/10;
+	}
+	return c;
+}
+
+10 11 12
+13 14 15
+16 17 18
+	 0
+10 ----> 0+0 = 0
+11 ----> 0+0 = 0
+12 ----> 0+1 = 1
+13 ----> 1+1 = 2
+14 ----> 2+0 = 2
+15 ----> 2+1 = 3
+16 ----> 3+0 = 3
+17 ----> 3+1 = 4
+18 ----> 4+0 = 4
+
+4
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int pc(int n)
+{
+    int c=0,d;
+    while(n!=0)
+    {
+        d=n%10;
+        if(d==2 || d==3||d==5||d==7)
+            c=c+1;
+        n=n/10;
+    }
+    return c;
+}
+int main() {
+    int a[3][3],i,j,c=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            c=c+pc(a[i][j]);
+        }
+    }
+    printf("%d",c);
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static int pc(int n)
+    {
+        int c=0,d;
+        while(n!=0)
+        {
+            d=n%10;
+            if(d==2||d==3||d==5||d==7)
+                c++;
+            n=n/10;
+        }
+        return c;
+    }
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]=new int[3][3];
+        int i,j,c=0;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                c=c+pc(a[i][j]);
+            }
+        }
+        System.out.println(c);
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+c=0
+for i in range(3):
+    for j in range(3):
+        for k in str(l[i][j]):
+            if k in "2357":
+                c=c+1
+print(c)
+
+LBP249	
+
+Reverse of each element in matrix
+
+Implement a program to reverse each element in the matrix.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> result matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int rev(int n)
+{
+    int r=0,d;
+    while(n!=0)
+    {
+        d=n%10;
+        r=r*10+d;
+        n=n/10;
+    }
+    return r;
+}
+int main() {
+    int a[3][3],i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d ",rev(a[i][j]));
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]= new int[3][3];
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                //convert into string
+                //string into string buffer
+                //cal reverse()
+                System.out.print(new StringBuffer(Integer.toString(a[i][j])).reverse()+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+for i in range(3):
+    for j in range(3):
+        print(str(l[i][j])[::-1],end=' ')
+    print()
+
+LBP250	
+
+Keep paliandrome number and replace remaining with 0's
+
+Implement a program to keep all paliandrome numbers as it is and replace remaining with 0.
+
+input ------> a 3x3 matrix
+con --------> no
+output -----> result matrix
+
+c implementation:
+-----------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int rev(int n)
+{
+    int r=0,d;
+    while(n!=0)
+    {
+        d=n%10;
+        r=r*10+d;
+        n=n/10;
+    }
+    return r;
+}
+int main() {
+    int a[3][3],i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            if(a[i][j]==rev(a[i][j]))
+                printf("%d ",a[i][j]);
+            else
+                printf("0 ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+java implementation:
+--------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a[][]= new int[3][3];
+        int i,j;
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                a[i][j]=obj.nextInt();
+            }
+        }
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+                //convert into string
+                //string into string buffer
+                //cal reverse()
+                String s1 = Integer.toString(a[i][j]);
+                String s2 = new StringBuffer(s1).reverse().toString();
+                if(s1.equals(s2))
+                    System.out.print(a[i][j]+" ");
+                else
+                    System.out.print("0 ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+python implementation:
+----------------------
+l1=[int(i) for i in input().split()]
+l2=[int(i) for i in input().split()]
+l3=[int(i) for i in input().split()]
+l=[l1,l2,l3]
+for i in range(3):
+    for j in range(3):
+        s=str(l[i][j])
+        if s==s[::-1]:
+            print(l[i][j],end=' ')
+        else:
+            print('0',end=' ')
+    print()
+
+
+
