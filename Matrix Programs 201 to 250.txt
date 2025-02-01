@@ -1,21 +1,17 @@
 Problem Link : https://www.hackerrank.com/matrixtest
 
-
 1 2 3
 4 5 6
 7 8 9
-
 order of matrix: 3x3
 3 rows
 3 cols
 
 1 2 3 4
 5 6 7 8
-
 order of matrix: 2x4
 
 10
-
 order of matrix: 1x1
 
 int a[10];
