@@ -6,6 +6,6 @@ This repository is a valuable resource for college students preparing for coding
 - **Contest**: 350 Problems
 
 ## 📚 Prerequisites:
-- Basic knowledge of **Python** programming.
+- Basic knowledge of **Java** or **Python** or **C** or programming .
 - Familiarity with core programming concepts such as **loops**, **functions**, and **conditional statements**.
  
