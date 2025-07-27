@@ -1,0 +1,591 @@
+Good Evening Students,
+
+Java Strings (String Handling in Java)
+
+String: group of characters.
+
+C/C++ ======> char[] or char array ==============> string.h
+Java =======> String is treated as an Object ====> java.lang.String, StringBuffer, StringBuilder, StringTokenizer
+Py =========> String is treated as an Object ====> inbuilt data structure is str
+
+Object ------> mutable objects and immutable objects
+
+String ------------------> immutable obj (modifications are not allowed)
+StringBuffer ------------> mutable obj (modifications are allowed), only one thread is allowed
+StringBuilder -----------> mutable obj (modifications are allowed), multiple threads are allowed
+StringTokenizer ---------> it is used to divide the split the string into tokens
+
+String:
+-------
+1. String s = new String();
+---------------------------
+it creates an empty string.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s = new String();
+		System.out.println(s);
+		System.out.println(s.length());//0
+	}
+}
+
+2. String s = new String(String_Literal);
+-----------------------------------------
+it creates a string obj with given string literal
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s = new String("prakash");
+		System.out.println(s);//prakash
+	}
+}
+
+3. String s = new String(char[]);
+---------------------------------
+it creates a string obj with char[] values.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		char ch[]={'w','e','l','c','o','m','e'};
+		String s = new String(ch);
+		System.out.println(s);//welcome
+	}
+}
+
+
+4. String s = new String(char[],int offset,int count);
+------------------------------------------------------
+it creates a string object with given char[] starting from offset to number of characters (count)
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		char ch[]={'w','e','l','c','o','m','e'};
+		//          0   1   2   3   4   5   6
+		String s1 = new String(ch);
+		String s2 = new String(ch,3,2);
+		String s3 = new String(ch,3,4);
+		System.out.println(s1);//welcome
+		System.out.println(s2);//co
+		System.out.println(s3);//come
+	}
+}
+
+5. String s = new String(byte[]);
+---------------------------------
+it creates a string object with given byte[]
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		byte b[] = {97,98,99,100,101};
+		//          0  1  2  3   4
+		String s = new String(b);
+		System.out.println(s);//abcde
+	}
+}
+
+6. String s = new String(byte[],int offset,int count);
+------------------------------------------------------
+it creates a string with given byte[] starting from offset to number of byte values
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		byte b[] = {97,98,99,100,101};
+		//          0  1  2  3   4
+		String s1 = new String(b);
+		String s2 = new String(b,1,3);
+		System.out.println(s1);//abcde
+		System.out.println(s2);//bcd
+	}
+}
+
+7. String s = new String(StringBuffer);
+---------------------------------------
+it converts String into StringBuffer obj
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer("iaH");//HYD
+		sb.reverse();//Hai
+		String s = new String(sb);
+		System.out.println(s);//Hai
+	}
+}
+
+8. String s = new String(StringBuilder);
+----------------------------------------
+it creates a String obj for the given StringBuilder obj
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		StringBuilder sb = new StringBuilder("iaH");//HYD
+		sb.reverse();//Hai
+		String s = new String(sb);
+		System.out.println(s);//Hai
+	}
+}
+
+Since string builder and buffer has similar methods. 
+With diff of efficiency.
+Which we convert more string into.
+
+
+we can give like this 
+String s = "Akshay";
+
+
+
+Methods:
+--------
+1. int length();
+----------------
+it returns length i.e. number of characters present in the given string.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s = new String("welcome");
+		System.out.println(s.length());//7
+	}
+}
+
+2. boolean isEmpty();
+---------------------
+it returns whether the given string is empty or not.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = new String("welcome");
+		String s2 = new String("");
+		String s3 = new String(" ");
+		System.out.println(s1.isEmpty());//false
+		System.out.println(s2.isEmpty());//true
+		System.out.println(s3.isEmpty());//false
+	}
+}
+
+3. char charAt(int index);
+--------------------------
+it returns char located at the given index value.
+
+RE: StringIndexOutOfBoundsException
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome");
+		//                    0123456
+		System.out.println(s.charAt(0));//w
+		System.out.println(s.charAt(4));//o
+		System.out.println(s.charAt(6));//e
+		System.out.println(s.charAt(8));//SIOBE
+	}
+}
+
+D:\>java Test
+w
+o
+e
+Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 8
+        at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+        at java.base/java.lang.String.charAt(String.java:1512)
+        at Test.main(Test.java:10)
+
+
+
+4. int indexOf(char);
+---------------------
+returns index value of the given character.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome");
+		//                    0123456
+		System.out.println(s.indexOf('w'));//0
+		System.out.println(s.indexOf('c'));//3
+		System.out.println(s.indexOf('e'));//1
+	}
+}
+
+5. int lastIndexOf(char);
+-------------------------
+returns last index value of the given character.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome");
+		//                    0123456
+		System.out.println(s.indexOf('w'));//0
+		System.out.println(s.indexOf('c'));//3
+		System.out.println(s.indexOf('e'));//1
+		System.out.println(s.lastIndexOf('e'));//6
+	}
+}
+
+Note: int myImplIndexOf(char,b_index,e_index);
+
+String is final class how we can implement custom method sir?
+
+
+class Prakash{
+	int myImplIndexOf(char,b_index,e_index){
+		-----------------------
+		-----------------------
+		-----------------------
+		-----------------------
+		return index;
+	}
+}
+
+
+6. char[] toCharArray();
+------------------------
+it returns char[] of the given string.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome");
+		//                    0123456
+		char ch[] = s.toCharArray();
+		for(char c:ch)
+			System.out.println(c);
+	}
+}
+
+D:\>javac Test.java
+
+D:\>java Test
+w
+e
+l
+c
+o
+m
+e
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome");
+		//                    0123456
+		char ch[] = s.toCharArray();
+		for(int i=0;i<ch.length;i++)
+			System.out.println(i+"=====>"+ch[i]);
+	}
+}
+
+D:\>javac Test.java
+
+D:\>java Test
+0=====>w
+1=====>e
+2=====>l
+3=====>c
+4=====>o
+5=====>m
+6=====>e
+
+7. byte[] getBytes();
+---------------------
+it returns ascii values of char present in the string.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome");
+		//                    0123456
+		byte b[] = s.getBytes();
+		for(int i=0;i<b.length;i++)
+			System.out.println(i+"=====>"+b[i]+" =====>"+(char)b[i]);
+	}
+}
+
+D:\>javac Test.java
+
+D:\>java Test
+0=====>119 =====>w
+1=====>101 =====>e
+2=====>108 =====>l
+3=====>99 =====>c
+4=====>111 =====>o
+5=====>109 =====>m
+6=====>101 =====>e
+
+D:\>
+
+
+8. String toUpperCase();
+------------------------
+it returns a new String obj with all upper case values.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome");
+		System.out.println(s.toUpperCase());//WELCOME
+		System.out.println(s);//welcome
+		s=s.toUpperCase();
+		System.out.println(s);//WELCOME
+	}
+}
+
+9. String toLowerCase();
+------------------------
+it returns a new String obj with all lower case values.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("JAVA");
+		System.out.println(s.toLowerCase());//java
+	}
+}
+
+10. String trim();
+------------------
+it removes spaces at begin and end of the string.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("   JAVA   ");
+		System.out.println(s.trim());//java
+		System.out.println(s.trim().length());//4
+		System.out.println(s.length());//10
+	}
+}
+
+11. boolean equals(String);
+---------------------------
+it returns true if both string objects having same content including case.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s1= new String("java");
+		String s2= new String("python");
+		String s3= new String("Java");
+		String s4= new String("java");
+		System.out.println(s1.equals(s2));//false
+		System.out.println(s1.equals(s3));//false
+		System.out.println(s1.equals(s4));//true
+	}
+}
+
+12. boolean equalsIgnoreCase(String);
+-------------------------------------
+it returns true if both string objects having same content excluding case.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s1= new String("java");
+		String s2= new String("python");
+		String s3= new String("Java");
+		String s4= new String("java");
+		System.out.println(s1.equalsIgnoreCase(s2));//false
+		System.out.println(s1.equalsIgnoreCase(s3));//true
+		System.out.println(s1.equalsIgnoreCase(s4));//true
+	}
+}
+
+strcmp() and stricmp()
+
+String s1 = new String("hai");
+String s2 = new String("hai");
+
+
+13. String concat(String);
+--------------------------
+it concatenates the given string obj with current string object.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s1= new String("welcome ");
+		String s2= new String("java");
+		String s3= new String("python");
+		System.out.println(s1.concat(s2));//welcome java
+		System.out.println(s1+s2);//welcome java
+		System.out.println(s1+s3);//welcome python
+	}
+}
+
+14. String substring(int start);
+--------------------------------
+it returns a substring starting from start location.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome to java and python programs");
+		System.out.println(s.substring(11));//java and python programs
+		System.out.println(s.substring(20));//python programs
+	}
+}
+
+15. String substring(int start,int end);
+----------------------------------------
+it returns a sub string starting from start to end-1.
+
+Ex:
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		String s= new String("welcome to java and python programs");
+		System.out.println(s.substring(11,15));//java
+	}
+}
+
+part-1 movie T
+part-2 movie T
+part-3 movie programs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
