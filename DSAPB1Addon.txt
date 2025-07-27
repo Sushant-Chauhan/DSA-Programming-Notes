@@ -1,0 +1,157 @@
+syllabus:
+---------
+01. introduction to DSA
+02. python basics (20 programs)
+03. python inbuilt data structures (str, list, tuple, set and dict) (30 programs)
+04. sample algorithms and implementation (30 programs)
+05. array data structure
+06. programs on array data structure
+07. string data structures and programs
+08. recursion and its application
+09. backtracking 
+10. sorting
+11. searching 
+12. divide and conquer algorithms (mergesort and quick sort)
+13. list data structure (SLL, DLL, CSLL, CDLL)
+14. stack data structures
+15. queue data structures
+16. hashtable data structure
+17. tree data structures
+18. priority queues or heaps
+19. graph data structure
+20. dynamic programming
+21. greedy methods
+22. complexities (time and space)
+23. bitmanipulations
+
+
+insert a new node at the begining of single linked list
+-------------------------------------------------------
+
+Ex: sum of 'n' natural numbers
+------------------------------
+Ex:
+	5 ----> 0+1+2+3+4+5 = 15
+	3 ----> 0+1+2 = 3
+
+Algorithm:
+----------
+step1: read 'n' value from the user.
+step2: apply business logic
+
+logic1: by using while loop
+logic2: by using for each loop
+logic3: by using list
+logic4: by using recursion
+
+step3: print the result
+
+logic1: by using while loop
+----------------------------
+i=0
+s=0
+while i<=n:
+    s=s+i
+    i=i+1
+print s
+
+logic2: by using for each loop
+------------------------------
+s=0
+for i in range(0,n+1):
+    s=s+i
+print s
+
+logic3: by using list
+---------------------
+list comprehension ----> easiest way to create list object
+
+l = [i for i in range(0,n+1)]
+print sum(l)
+
+logic4: by using math formula
+-----------------------------
+print n*(n+1)/2
+
+logic5: by using recursion
+--------------------------
+def sumofn(n):
+    if n==0:
+       return 0
+    else:
+       return n+sumofn(n-1)
+
+def sumofn_logic1(n):
+	index = 0
+	sum = 0
+	while index <= n:
+		sum = sum + index
+		index = index + 1
+	return sum
+
+def sumofn_logic2(n):
+	sum = 0
+	for i in range(0,n+1):
+		sum = sum + i
+	return sum
+
+def sumofn_logic3(n):
+	l = [i for i in range(0,n+1)]
+	return sum(l)
+
+def sumofn_logic4(n):
+	return n*(n+1)//2
+
+def sumofn_logic5(n):
+	if n==0:
+		return 0
+	else:
+		return n+sumofn_logic5(n-1)
+
+n=int(input("Enter any number: "))
+print(f"sum of {n} natural numbers by using logic1: {sumofn_logic1(n)}")
+print(f"sum of {n} natural numbers by using logic2: {sumofn_logic2(n)}")
+print(f"sum of {n} natural numbers by using logic3: {sumofn_logic3(n)}")
+print(f"sum of {n} natural numbers by using logic4: {sumofn_logic4(n)}")
+print(f"sum of {n} natural numbers by using logic5: {sumofn_logic5(n)}")
+
+C:\test>py test.py
+Enter any number: 4
+sum of 4 natural numbers by using logic1: 10
+sum of 4 natural numbers by using logic2: 10
+sum of 4 natural numbers by using logic3: 10
+sum of 4 natural numbers by using logic4: 10
+sum of 4 natural numbers by using logic5: 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
