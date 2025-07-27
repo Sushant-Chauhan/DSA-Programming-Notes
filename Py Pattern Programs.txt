@@ -1,9 +1,3 @@
-Let Go bro :)
-My Pogramming Self Notes
-- by Me ( Sushant Chauhan )
-
-
-
 looping statements or iterative statements:
 -------------------------------------------
 if we want to repeat one or more statements, any number of times based on condition.
