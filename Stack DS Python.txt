@@ -677,87 +677,9 @@ AB+C*
 AB*CD*+
 +*AB*CD
 
-evalutation of postfix
-----------------------
-def precedence(x):
-	if x=='(' or x==')':
-		return 0
-	if x=='+' or x=='-':
-		return 1
-	if x=='*' or x=='/':
-		return 2
-	return 4
+eval of prefix
+eval of postfix
 
-def infix_to_postfix_conversion(expn):
-	s = []
-	tokens=list(expn)
-	result = ""
-	for item in tokens:
-		if item in "+-*/":
-			while len(s)!=0 and precedence(item) <= precedence(s[-1]):
-				result=result+s.pop()
-			s.append(item)
-		elif item=='(':
-			s.append(item)
-		elif item==')':
-			temp=None
-			while len(s)!=0 and temp!='(':
-				temp = s.pop()
-				if temp!='(':
-					result = result + temp
-		else:
-			result=result+item
-	while len(s)!=0:
-		result = result + s.pop()
-	return result
+queue
 
-def replace(expn):
-	s = ""
-	for i in expn:
-		if i=='(':
-			s=s+')'
-		elif i==')':
-			s=s+'('
-		else:
-			s=s+i
-	#print(s)
-	return s
-
-def infix_to_prefix_conversion(expn):
-	expn = expn[::-1]
-	expn = replace(expn)
-	expn = infix_to_postfix_conversion(expn)
-	expn = expn[::-1]
-	return expn
-
-def postfix_eval(expn):
-	s = []
-	tokens = list(expn)
-	for i in tokens:
-		if i=='+':
-			n1 = s.pop()
-			n2 = s.pop()
-			s.append(n1+n2)
-		elif i=='-':
-			n1 = s.pop()
-			n2 = s.pop()
-			s.append(n1-n2)
-		elif i=='*':
-			n1 = s.pop()
-			n2 = s.pop()
-			s.append(n1*n2)
-		elif i=='/':
-			n1 = s.pop()
-			n2 = s.pop()
-			s.append(n1/n2)
-		else:
-			s.append(int(i))
-	return s.pop()
-
-print(postfix_eval(infix_to_postfix_conversion("1+2"))) #3
-print(postfix_eval(infix_to_postfix_conversion("1+2*3"))) #7
-
-C:\test>py test.py
-3
-7
-
+8PM to 10PM
